@@ -20,10 +20,7 @@ module CryptoExpert
       # combine major and minipair
       def to_attr_hash
         hash = to_hash.reject { |key, _| [:id].include? key }
-        hash.each do |key, content| 
-          content.to_s
-          key.to_s
-        end
+        hash[time].to_s
         hash
       end
     end

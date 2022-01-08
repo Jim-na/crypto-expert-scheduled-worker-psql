@@ -8,7 +8,7 @@ module CryptoExpert
       # extend SignalCalculator
       def initialize(symbol)
         @symbol = symbol
-        @now = CryptoExpert::Binance::TempMiniPairMapper.new(CryptoExpert::UpdateMinipairWorker.config.BINANCE_API_KEY).get(symbol)
+        @now = CryptoExpert::Binance::TempMiniPairMapper.new(CryptoExpert::App.config.BINANCE_API_KEY).get(symbol)
         @history = CryptoExpert::Repository::TempMiniPairs.find_symbol(symbol)
         @calculator = CryptoExpert::Binance::SignalCalculator
       end
