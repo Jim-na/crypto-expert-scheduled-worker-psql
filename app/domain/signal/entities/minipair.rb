@@ -26,7 +26,10 @@ module CryptoExpert
       # price now - history
       def to_attr_hash
         hash = to_hash.reject { |key, _| [:id].include? key }
-        hash[time].to_s
+        hash.each do |key, c|
+          puts key
+          puts c.class
+        end
         hash
       end
     end

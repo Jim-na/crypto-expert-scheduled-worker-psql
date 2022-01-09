@@ -34,6 +34,7 @@ module CryptoExpert
       end
 
       def self.create(entity)
+        puts "create...."
         rebuild_entity Database::SignalOrm.create(entity.to_attr_hash)
       end
     end

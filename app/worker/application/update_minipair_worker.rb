@@ -14,14 +14,17 @@ module CryptoExpert
       puts "REPORT DateTime: #{Time.now}"
 
       @minipairs = Binance::SignalsListMapper.new.get_sortlist().signals
+      puts "minipairs length: ....."
+      puts @minipairs.size
       @minipairs.each do |minipair|
+        puts minipair.to_attr_hash
+        
         Repository::Signals.create(minipair)
       end
     end
 
     def check
       val = Repository::Signals.all()
-      puts val[0].to_attr_hash
     end
   end
 end
