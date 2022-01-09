@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'tempminipairs'
+require_relative '../../signal/repositories/signals'
 
 module CryptoExpert
   module Repository

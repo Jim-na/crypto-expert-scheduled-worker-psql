@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
-Dir.glob("#{__dir__}/*.rb").each do |file|
-  require file
+folders = %w[application]
+folders.each do |folder|
+  require_relative "#{folder}/init.rb"
 end
